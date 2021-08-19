@@ -1,0 +1,142 @@
+footer{
+    width: 100%;
+    background-color: var(--blue);
+    color: white;
+}
+
+.footer{
+    text-align: start;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.item-footer{
+    width: 100%;
+    padding: 20px;
+}
+
+.footer-logo{
+    padding: 10px 0;
+}
+
+.footer-logo h1{
+    color: white;
+}
+
+.item-footer p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.footer-tittle{
+    width: 100%;
+    padding: 20px 0 5px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--yellow);
+    text-transform: capitalize;
+}
+
+.list-footer{
+    list-style: none;
+}
+
+.item-list-footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.item-list-footer{
+    padding: 0 0 15px;
+    text-transform: capitalize;
+    font-size: .9rem;
+}
+
+.item-list-footer::before{
+    content: "\23f5";
+    padding-right: 5px;
+
+}
+
+.item-list-footer a:hover{
+    color: var(--yellow);
+}
+
+
+.item-footer .p-newsletter {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-footer{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-buttom{
+    padding: 10px 25px;
+    text-transform: capitalize;
+    color: white;
+    background-color: var(--yellow);
+    border: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.footer-buttom:hover{
+    background-color: white;
+    color: var(--blue);
+}
+
+.footer-contact{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.footer-contact img{
+    margin-right: 10px;
+}
+
+.footer-contact p{
+    text-align: left;
+    word-spacing: 0;
+}
+
+.copy{
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: var(--blue-claro);
+    text-transform: capitalize;
+}
+
+@media screen and (min-width: 650px){
+    .footer{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-logo{
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 930px){
+    .footer{
+        grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+        justify-content: center;
+        grid-gap: 40px;
+        padding: 20px 0;
+    }
+
+    .item-footer{
+        padding: 0;
+    }
+}
+

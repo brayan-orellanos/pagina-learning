@@ -1,0 +1,306 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth
+}
+
+@import "header.css";
+@import "banner.css";
+@import "courses.css";
+@import "contact.css";
+@import "footer.css";
+
+:root{
+    --yellow: rgba(224, 184, 4, 0.925);
+    --blue: #002147;
+    --blue-claro: #095a83;
+    --color-text: #555;
+    --section-aply: rgb(230,230,230);
+}
+
+body{
+    background-color: white;
+    color: var(--color-text);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    min-height: 100vh;
+}
+
+.subir{
+    opacity: 0;
+    visibility: hidden;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    background-color: #095a83;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 15px;
+    right: 15px;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    z-index: 100;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: all 2s ease;
+}
+
+.subir.ver-subir {
+    opacity: 1;
+    visibility: visible;
+    transition: all 2s ease;
+}
+
+.subir::after{
+    content: "\2303";
+    color: white;
+    position: relative;
+    top: 10px;
+}
+
+/* container de todos los section */
+.container{
+    width: 98%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.container p{
+    margin-bottom: 20px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+p{
+    hyphens: auto;
+    line-height: 1.6;
+    word-spacing: 0.3;
+    letter-spacing: .5px;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+}
+
+/* diseño general */
+.welcome, .apply, .reaserch, .news, .cuadro-contact, .footer, .courses{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 5px;
+}
+
+
+.welcome img, .apply img, .reaserch img, .news img, .courses img, .contact img{
+    width: 100%;
+    align-self: center;
+}
+
+
+.cuadro-welcome{
+    text-align: center;
+}
+
+.apply{
+    margin-bottom: 0;
+}
+
+.section-apply{
+    background-color: var(--section-aply);
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 50px;
+}
+
+
+.apply img{
+    margin-bottom: 20px;
+}
+
+
+.news p{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* cuadro del titulo */
+.div-tittle{
+    display: inline-block;
+    width: auto;
+    margin: 0 auto;
+}
+
+/* titulo */
+.tittle{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--blue-claro);
+    text-transform: capitalize;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    position: relative;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.tittle span{
+    color:  black;
+}
+
+/* linea debajo de los titulos */
+.tittle::after{
+    content: "";
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(90deg,var(--yellow) 50%, var(--blue) 50%);
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transform: skewx(-20deg);
+    -webkit-transform: skewx(-20deg);
+    -moz-transform: skewx(-20deg);
+    -ms-transform: skewx(-20deg);
+    -o-transform: skewx(-20deg);
+}
+
+/* botones de los section */
+.button-blue{
+    text-transform: capitalize;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 165px;
+    height: 45px;
+    color: white;
+    text-indent: -10px;
+    background-color: var(--blue-claro);
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    text-decoration: none;
+    transform: perspective(1px) translateZ(0);
+    -webkit-transform: perspective(1px) translateZ(0);
+    -moz-transform: perspective(1px) translateZ(0);
+    -ms-transform: perspective(1px) translateZ(0);
+    -o-transform: perspective(1px) translateZ(0);
+    overflow: hidden;
+}
+
+/* figura del hover de los botones */
+.button-blue::before, .subir:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: transform 0.3s ease-out;
+    -webkit-transition: transform 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out;
+    background: black;
+    z-index: -1;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+/* hover de los botones */
+.button-blue:hover::before, .subir:hover::before{
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+}
+
+/* curvatura del final de los botones */
+.button-blue::after{
+    content: "";
+    width: 20px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -12px;
+    transform: skewx(-20deg);
+    -webkit-transform: skewx(-20deg);
+    -moz-transform: skewx(-20deg);
+    -ms-transform: skewx(-20deg);
+    -o-transform: skewx(-20deg);
+    background-color: white;
+}
+
+.div-apply .button-blue::after {
+    background-color: var(--section-aply);
+}
+
+
+.subtittle{
+    position: relative;
+    padding: 20px 10px;
+    font-size: 1.2rem;
+    color: var(--blue-claro);
+    background: white;
+    bottom: 40px;
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 500;
+    text-transform: capitalize;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (min-width: 650px){
+    .welcome, .apply, .reaserch, .news, .cuadro-contact, .footer, .courses{
+        grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+        grid-gap: 10px;
+    }
+}
+
+@media screen and (min-width: 930px){
+    .container{
+        width: 90%;
+        padding: 0;
+    }
+
+    .welcome, .apply, .reaserch, .news, .cuadro-contact, .footer, .courses{
+        grid-gap: 20px;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .container{
+        width: 85%;
+        padding: 40px 0;
+    }
+
+    .welcome, .courses, .apply, .reaserch, .news, .cuadro-contact, .footer{
+        grid-gap: 30px;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .container p{
+        margin-bottom: 30px;
+    }
+}
